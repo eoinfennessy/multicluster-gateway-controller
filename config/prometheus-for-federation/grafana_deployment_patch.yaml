@@ -10,3 +10,15 @@
   value:
     name: grafana-istio-workload
     mountPath: /grafana-dashboard-definitions/0/grafana-istio-workload
+- op: add
+  path: /spec/template/spec/volumes/-
+  value:
+    name: mgc-test-dashboard
+    configMap:
+     defaultMode: 420
+     name: mgc-test-dashboard
+- op: add
+  path: /spec/template/spec/containers/0/volumeMounts/-
+  value:
+    name: mgc-test-dashboard
+    mountPath: /grafana-dashboard-definitions/0/mgc-test-dashboard

@@ -87,3 +87,7 @@ configMapGenerator:
   namespace: monitoring
   files:
   - grafana_dashboard_istio-workload.json
+- name: mgc-test-dashboard
+  namespace: monitoring
+  files:
+  - mgc-test-dashboard.json
